@@ -7,18 +7,6 @@ error_reporting(0);
 require_once 'vendor/autoload.php';
 define('DS', DIRECTORY_SEPARATOR);
 
-if(isset($_GET['teste'])){
-	//Modo desenvolvimento
-	ini_set('display_errors', 1);
-	ini_set('display_startup_errors', 1);
-	error_reporting(E_ALL);
-	$arquivo = 'lattes-renato-farias-de-paiva.pdf';
-	$caminho = __DIR__ . DS . 'historicos' . DS .  $arquivo;
-	echo '<pre>';
-	print_r(lerLattes($caminho));
-	exit();
-}
-
 if(isset($_FILES['arquivo'])){
 	if(isset($_POST['edital']) && isset($_POST['processo'])){
 		
