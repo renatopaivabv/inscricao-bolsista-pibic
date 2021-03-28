@@ -1,0 +1,407 @@
+<!DOCTYPE HTML>
+<html lang="pt-BR">
+<!--RECURSOS-->
+<head>
+﻿<meta charset="UTF-8">
+<title>Unilab - Proppg - Formulário de recursos</title>
+	
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="http://proppg.unilab.edu.br/forms/framecss/css/reset.css" rel="stylesheet" type="text/css" media="screen,projection">
+	<link href="http://proppg.unilab.edu.br/forms/framecss/css/normalize.css" rel="stylesheet" type="text/css" media="screen,projection">	
+	<link href="http://proppg.unilab.edu.br/forms/framecss/css/framecss.css" rel="stylesheet" type="text/css" media="screen,projection">
+	
+	<!--JQuery-->
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+	<!--Select2-->
+	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+	
+	<!--SweetAlert2-->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.6.1/dist/sweetalert2.all.min.js"></script>
+
+	<style>
+	.dados-projetos{
+		height: 0;
+		overflow: hidden;
+		transition: height 600ms ease 0ms;
+	}
+	.close{
+		display: block;
+		height: 0;
+	}
+	</style>
+
+</head>
+<body>
+	
+<div class="container">
+
+	<div class="row padding-2">
+	
+		<div class="col s3">
+			<img class="responsive-img" src="http://proppg.unilab.edu.br/forms/img/logo-unilab.jpg" />
+		</div>
+	
+		<div class="col s7 center bold">
+			<p>UNIVERSIDADE DA INTEGRAÇÃO INTERNACIONAL DA LUSOFONIA AFRO-BRASILEIRA</p>
+			<p>PRÓ-REITORIA DE PESQUISA E PÓS-GRADUAÇÃO</p>
+			<p>COORDENAÇÃO DE PESQUISA</p>
+		</div>
+		
+		<div class="col s2">
+			<img class="responsive-img" src="http://proppg.unilab.edu.br/forms/img/logo-proppg.png" />
+		</div>
+		
+	</div>
+	
+	<div class="row">
+
+		<div class="s12 center">
+			<h1>INDICAÇÃO DE BOLSISTAS/VOLUNTÁRIOS</h1>
+		</div>
+		
+	</div>
+	<div class="row">
+
+		<div class="col s12 m9"></div>
+		
+		<div class="col s12 m3">		
+			<input class="btn indigo no-print" type="button" value="Limpar formulário">		
+		</div>
+		
+		
+	</div>
+	
+	<div class="row indigo">
+		<div class="col s12">
+			<p>Dados do projeto</p>
+		</div>
+	</div>
+
+	
+	<div class="row">
+		<div class="input-field col s12 m6">
+			<label for="editais">Edital</label>
+			<select name="edital" id="edital" required="required">
+				<option value="" disabled selected>>>>Selecione</option>
+			</select>
+		</div>
+		<div class="input-field col s12 m6">		
+			<label for="projeto">Orientador</label>
+			<select name="projeto" id="projeto" required="required">
+				<option value="" disabled selected>>>>Selecione</option>
+			</select>
+		</div>	
+	</div>
+	
+	<div class="row" style="display: none">
+		<div class="input-field col s12 m2">		
+			<label for="edital_id">Id do edital</label>
+			<input type="text" name="edital_id" id="edital_id" />
+		</div>	
+		<div class="input-field col s12 m2">
+			<label for="edital_ano">Ano do edital</label>
+			<input type="text" name="edital_ano" id="edital_ano" />
+		</div>
+		<div class="input-field col s12 m2">		
+			<label for="edital_num">Número do edital</label>
+			<input type="text" name="edital_num" id="edital_num" />
+		</div>	
+		<div class="input-field col s12 m6">		
+			<label for="edital_texto">Descrição do edital</label>
+			<input type="text" name="edital_texto" id="edital_texto" />
+		</div>
+	</div>
+	
+	<div class="row dados-projetos">
+		<div class="input-field col s12 m2">		
+			<label for="projeto_processo">Processo</label>
+			<input type="text" name="projeto_processo" id="projeto_processo" disabled="true" />
+		</div>	
+		<div class="input-field col s12 m10">
+			<label for="projeto_titulo">Título</label>
+			<input type="text" name="projeto_titulo" id="projeto_titulo" disabled="true" />
+		</div>
+		<div class="input-field col s12 m2">		
+			<label for="projeto_instituto">Instituto</label>
+			<input type="text" name="projeto_instituto" id="projeto_instituto" disabled="true"  />
+		</div>	
+		<div class="input-field col s12 m4">
+			<label for="projeto_area">Área</label>
+			<input type="text" name="projeto_area" id="projeto_area" disabled="true"  />
+
+		</div>
+		<div class="input-field col s12 m6">
+			<label for="projeto_orientador">Orientador</label>
+			<input type="text" name="projeto_orientador" id="projeto_orientador" disabled="true"  />
+		</div>
+
+		<div class="input-field col s12 m3">		
+			<label for="projeto_estado">Estado</label>
+			<input type="text" name="projeto_estado" id="projeto_estado"disabled="true"  />
+		</div>	
+		<div class="input-field col s12 m3">
+			<label for="projeto_inicio">Data de início</label>
+			<input type="text" name="projeto_inicio" id="projeto_inicio"disabled="true"  />
+		</div>
+		<div class="input-field col s12 m3">
+			<label for="projeto_final">Data de conclusão</label>
+			<input type="text" name="projeto_final" id="projeto_final" disabled="true"  />
+		</div>
+		<div class="input-field col s12 m3">
+			<label for="projeto_situacao">Situação do projeto</label>
+			<input type="text" name="projeto_situacao" id="projeto_situacao" disabled="true"  />
+		</div>
+	</div>
+	
+	
+	<div class="row indigo">
+		<div class="col s12">
+			<p>Dados do Histórico</p>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col s12 m9">
+		</div>
+		<div class="col s12 m3">
+			<input type="button" class="btn indigo no-print" id="btn_historico" value="Carregar histórico">	
+		</div>
+	</div>
+	
+	<div class="row msg-historico">
+		<div class="col s12">
+			<p>O arquivo do histórico deve ser gerado através do Sigaa.
+		</div>
+	</div>
+	
+	<div class="row dados-historico">
+		<div class="input-field col s12 m6">
+			<label for="historico_emissao">Data de emissão</label>
+			<input type="text" name="historico_emissao" id="historico_emissao"  disabled="true"/>
+		</div>
+		<div class="input-field col s12 m6">
+			<label for="historico_ide">IDE</label>
+			<input type="text" name="historico_ide" id="historico_ide"  disabled="true"/>
+		</div>
+		<div class="input-field col s12 m5">		
+			<label for="bolsista_nome">Nome do bolsista</label>
+			<input type="text" name="bolsista_nome" id="bolsista_nome"  disabled="true"/>
+		</div>	
+		<div class="input-field col s12 m3">
+			<label for="bolsista_cpf">CPF</label>
+			<input type="text" name="bolsista_cpf" id="bolsista_cpf"  disabled="true"/>			
+		</div>
+		<div class="input-field col s12 m2">
+			<label for="bolsista_nascimento">Data de Nascimento</label>
+			<input type="text" name="bolsista_nascimento" id="bolsista_nascimento"  disabled="true"/>
+
+		</div>
+		<div class="input-field col s12 m2">
+			<label for="bolsista_nacionalidade">Nacionalidade</label>
+			<input type="text" name="bolsista_nacionalidade" id="bolsista_nacionalidade"  disabled="true"/>
+		</div>
+		<div class="input-field col s12 m5">
+			<label for="bolsista_endereco">Endereço do bolsista</label>
+			<input type="text" name="bolsista_endereco" id="bolsista_endereco"  disabled="true"/>
+		</div>
+		<div class="input-field col s12 m3">
+			<label for="bolsista_cidade">Cidade do bolsista</label>
+			<input type="text" name="bolsista_cidade" id="bolsista_cidade"  disabled="true"/>
+		</div>
+		<div class="input-field col s12 m2">
+			<label for="bolsista_bairro">Bairro</label>
+			<input type="text" name="bolsista_bairro" id="bolsista_bairro"  disabled="true"/>
+		</div>
+		<div class="input-field col s12 m2">		
+			<label for="bolsista_estado">Estado</label>
+			<input type="text" name="bolsista_estado" id="bolsista_estado"  disabled="true"/>
+		</div>	
+
+		<div class="input-field col s12 m6">
+			<label for="curso_nome">Nome do curso</label>
+			<input type="text" name="curso_nome" id="curso_nome"  disabled="true"/>
+		</div>
+		<div class="input-field col s12 m3">
+			<label for="curso_grau">Grau</label>
+			<input type="text" name="curso_grau" id="curso_grau"  disabled="true"/>
+		</div>
+		<div class="input-field col s12 m3">		
+			<label for="curso_instituto">Instituto</label>
+			<input type="text" name="curso_instituto" id="curso_instituto"  disabled="true"/>
+		</div>	
+		<div class="input-field col s12 m3">		
+			<label for="curso_matricula">Matrícula</label>
+			<input type="text" name="curso_matricula" id="curso_matricula"  disabled="true"/>
+		</div>	
+		<div class="input-field col s12 m3">
+			<label for="curso_regime">Regime</label>
+			<input type="text" name="curso_regime" id="curso_regime"  disabled="true"/>
+		</div>
+		<div class="input-field col s12 m3">
+			<label for="curso_tipo">Tipo</label>
+			<input type="text" name="curso_tipo" id="curso_tipo"  disabled="true"/>
+		</div>
+		<div class="input-field col s12 m3">
+			<label for="curso_cidade">Cidade do curso</label>
+			<input type="text" name="curso_cidade" id="curso_cidade"  disabled="true"/>
+		</div>
+	</div>
+
+	
+	<div class="row indigo">
+		<div class="col s12">
+			<p>Dados do Lattes</p>
+		</div>
+	</div>
+
+	<div class="row msg-lattes">
+		<div class="col s12">
+			<p>O currículo lattes deve ser gerado seguindo esse breve 
+				<a class="tutorial_lattes" target="_blank" href="https://docs.google.com/document/d/1r9q-y7kyGMnnrhIqPHAyxK9pNUMENbXoD7CFLaYx0hI">tutorial</a>.
+			</p>
+		</div>
+	</div>
+	
+	<div class="row dados-lattes">
+		<div class="col s12 m9">
+		</div>
+		<div class="col s12 m3">
+			<input type="button" class="btn indigo no-print" id="btn_lattes" value="Carregar Lattes">	
+		</div>
+
+		<div class="input-field col s12 m4">
+			<label for="lattes_atualizacao">Data de atualização</label>
+			<input type="text" name="lattes_atualizacao" id="lattes_atualizacao"  disabled="true"/>
+		</div>
+		<div class="input-field col s12 m8">
+			<label for="lattes_url">URL</label>
+			<input type="text" name="lattes_url" id="lattes_url"  disabled="true"/>
+		</div>
+		<div class="input-field col s12 m4">
+			<label for="lattes_nome">Nome do bolsista</label>
+			<input type="text" name="lattes_nome" id="lattes_nome"  disabled="true"/>
+		</div>
+		<div class="input-field col s12 m4">
+			<label for="lattes_cpf">CPF</label>
+			<input type="text" name="lattes_cpf" id="lattes_cpf"  disabled="true"/>
+		</div>
+		<div class="input-field col s12 m4">
+			<label for="lattes_nascimento">Data de nascimento</label>
+			<input type="text" name="lattes_nascimento" id="lattes_nascimento"  disabled="true"/>
+		</div>
+		
+		<div class="input-field col s12 m4">
+			<label for="lattes_telefone">Telefone</label>
+			<input type="text" name="lattes_telefone" id="lattes_telefone"  disabled="true"/>
+		</div>
+		<div class="input-field col s12 m4">
+			<label for="lattes_celular">Celular</label>
+			<input type="text" name="lattes_celular" id="lattes_celular"  disabled="true"/>
+		</div>
+
+		<div class="input-field col s12 m4">
+			<label for="lattes_sexo">Sexo</label>
+			<select name="lattes_sexo" id="lattes_sexo" required="required" disabled=true>
+				<option value="" disabled selected>>>>Selecione</option>
+				<option value="Feminino">Feminino</option>
+				<option value="Masculino">Masculino</option>
+			</select>
+		</div>
+
+		<div class="input-field col s12 m6">
+			<label for="lattes_email_contato">e-mail de contato</label>
+			<input type="text" name="lattes_email_contato" id="lattes_email_contato"  disabled="true"/>
+		</div>
+		<div class="input-field col s12 m6">
+			<label for="lattes_email_alternativo">e-mail alternativo</label>
+			<input type="text" name="lattes_email_alternativo" id="lattes_email_alternativo"  disabled="true"/>
+		</div>
+	</div>
+	
+	<div class="row indigo">
+		<div class="col s12">
+			<p>Dados da bolsa</p>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="input-field col s12 m4">
+			<label for="condicao">Vínculo</label>
+			<select name="condicao" id="condicao" required="required">
+				<option value="" disabled selected>>>>Selecione</option>
+				<option value="bolsista">Bolsista</option>
+				<option value="voluntario">Voluntário</option>
+			</select>	
+		</div>
+		<div class="input-field col s12 m4">
+			<label for="agencia_fomento">Agência de fomento</label>
+			<select name="agencia_fomento" id="agencia_fomento" required="required">
+				<option value="" disabled selected>>>>Selecione</option>
+			</select>	
+		</div>
+		<div class="input-field col s12 m4">
+			<label for="conta">Modalidade</label>
+			<select name="modalidade" id="modalidade" required="required">
+				<option value="" disabled selected>>>>Selecione</option>
+			</select>	
+		</div>
+	</div>
+	
+	<div class="row indigo">
+		<div class="col s12">
+			<p>Dados bancários (Apenas para bolsistas)</p>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="input-field col s12 m3">
+			<label for="banco">Banco</label>
+			<select name="banco" id="banco" required="required">
+				<option value="" disabled selected>>>>Selecione</option>
+			</select>	
+		</div>
+		<div class="input-field col s12 m3">
+			<label for="agencia">Agência</label>
+			<input type="text" name="agencia" id="agencia" />	
+		</div>
+		<div class="input-field col s12 m3">
+			<label for="conta">Conta</label>
+			<input type="text" name="conta" id="conta" />	
+		</div>
+		<div class="input-field col s12 m3">
+			<label for="operacao">Operação/Tipo de conta</label>
+			<input type="text" name="operacao" id="operacao" />	
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col s12 center">
+			<p>Você declara que todas as informações acima são verdadeiras?</p>					
+		</div>
+		<div class="col s12 center">
+			<input class="radio" type="radio" name="declara" value="Sim" required/><label>Sim  </label>&nbsp	&nbsp
+			<input class="radio" type="radio" name="declara" value="Nao" required checked/><label>Nao  </label>	
+		</div>
+	</div>
+	
+<input type="file" id="arquivoHistorico" accept=".pdf" style="display: none" />
+<input type="file" id="arquivoLattes" accept=".pdf" style="display: none" />
+
+
+
+
+	<div class="row" style="margin: 30px 0;">
+		<div class="col s12 m4">
+		</div>
+		<div class="col s12 m4">
+			<input type="button" class="btn indigo " id="enviar" value="Gerar documentos">	
+		</div>
+	</div>
+
+<input type="text" name="projeto_id" id="projeto_id" />
+
+<script type="module" src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+
+/arquivos
+/gerenciar
+/historicos
+/vendor
+*.sql
+*.sqlite3
+*.txt
+*.log

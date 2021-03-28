@@ -1,0 +1,12 @@
+{
+    "name": "renatopaivabv/indicacao-bolsista",
+    "authors": [
+        {
+            "name": "renatopaivabv",
+            "email": "renatopaivabv@gmail.com"
+        }
+    ],
+    "require": {
+        "smalot/pdfparser": "*"
+    }
+}
